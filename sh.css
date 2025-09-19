@@ -1,0 +1,341 @@
+/*
+Shaphilltd Security Website CSS
+Theme: Pale Blue & White on Grey Background
+Colors: Grey backgrounds, black text, blue highlights
+*/
+
+/* ========== GLOBAL RESET ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #2D5A87; /* Deep blue for highlights */
+  --secondary: #87CEEB; /* Pale blue */
+  --accent: #1E90FF; /* Stronger accent blue */
+  --light: #F7F7F7; /* White/light grey */
+  --dark: #222222; /* Black text */
+  --gradient-1: linear-gradient(135deg, #2D5A87 0%, #87CEEB 100%);
+  --gradient-2: linear-gradient(135deg, #E6E6E6 0%, #87CEEB 100%);
+}
+
+body {
+  padding-top: 100px; /* matches header height */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: var(--dark);
+  background: #EAEAEA; /* Main grey background */
+  overflow-x: hidden;
+}
+
+/* ========== HEADER ========== */
+header {
+  background: rgba(255, 255, 255, 0.95); /* semi-transparent background */
+  backdrop-filter: blur(10px);           /* subtle blur effect */
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05); /* light shadow */
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+
+  height: 100px;                         /* fixed navbar height */
+  display: flex;
+  align-items: center;                   /* vertically center contents */
+  overflow: visible;                     /* allow logo to extend outside */
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5%;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+}
+
+.logo {
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: visible;    /* ensure the logo isn’t clipped */
+}
+
+.logo img {
+  height: 350px;      /* increase logo size */
+  width: auto;        /* keep proportions */
+  object-fit: contain;
+  margin-top: 120px;   /* let it “stick out” a bit below the navbar */
+}
+
+.logo-text {
+  margin-left: 270px;           /* Push text aside so it doesn’t overlap logo */
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: var(--primary);
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--dark);
+  font-weight: 500;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+}
+
+.nav-links a:hover {
+  color: var(--primary);
+  background: rgba(45, 90, 135, 0.05);
+}
+
+.nav-links a.active {
+  color: white;
+  background: var(--gradient-1);
+}
+
+/* Mobile menu toggle */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 4px;
+}
+
+.menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background: var(--dark);
+  transition: all 0.3s ease;
+  border-radius: 3px;
+}
+
+/* ========== HERO SECTION ========== */
+#home {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* text left, image right */
+  background: var(--gradient-2);
+  padding: 5rem 5% 3rem;
+  flex-wrap: wrap; /* allows stacking on smaller screens */
+  gap: 2rem;
+}
+
+.hero-content {
+  flex: 1;          /* text takes available space */
+  max-width: 600px; /* don’t let it stretch too wide */
+}
+
+.hero-image {
+  flex: 1;          /* image takes equal space */
+  display: flex;
+  justify-content: flex-end; /* push image to the right */
+}
+
+.hero-image img {
+  max-width: 450px; /* control image size */
+  width: 100%;      /* responsive shrink */
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+/* ========== SERVICES SECTION ========== */
+#services {
+  padding: 5rem 5%;
+  background: #F7F7F7;
+}
+.service-img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  color: var(--dark);
+}
+
+.section-subtitle {
+  text-align: center;
+  color: #555;
+  margin-bottom: 3rem;
+  font-size: 1.1rem;
+}
+
+.services-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.service {
+  background: white;
+  border-radius: 15px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.service:hover {
+  transform: translateY(-5px);
+}
+
+.service h3 {
+  margin: 1rem 0;
+  color: var(--primary);
+}
+
+.service p {
+  color: #444;
+}
+
+/* ========== ABOUT US SECTION ========== */
+#about {
+  padding: 5rem 5%;
+  background: #EAEAEA;
+  text-align: center;
+}
+
+#about .about-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+#about .image-placeholder {
+  margin: 2rem auto;
+  max-width: 400px;
+}
+
+/* ========== CONTACT SECTION ========== */
+#contact {
+  padding: 5rem 5%;
+  background: var(--light);
+}
+
+.contact-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+.contact-info h3 {
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-family: inherit;
+  resize: none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--primary);
+  outline: none;
+}
+
+.submit-btn {
+  background: var(--primary);
+  color: white;
+  padding: 1rem;
+  border: none;
+  border-radius: 40px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.submit-btn:hover {
+  background: var(--accent);
+}
+
+/* ========== FOOTER ========== */
+footer {
+  background: var(--dark);
+  color: white;
+  text-align: center;
+  padding: 2rem 5%;
+  margin-top: 3rem;
+}
+
+footer p {
+  font-size: 0.9rem;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+  .nav-links {
+    position: fixed;
+    top: 100px; /* same as header height */
+    right: -100%;
+    width: 100%;
+    height: calc(100vh - 100px);
+    background: white;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: right 0.3s ease;
+    gap: 1.5rem;
+  }
+  .nav-links.active {
+    right: 0;
+  }
+  #home {
+    flex-direction: column;
+    text-align: center;
+  }
+  .logo-text {
+    margin-left: 0; /* Stack text below logo on mobile */
+    font-size: 1.2rem;
+  }
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
